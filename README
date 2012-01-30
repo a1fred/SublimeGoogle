@@ -1,5 +1,11 @@
 Google search in sublime text 2.
 
+INSTALL:
+You may install this via "Package Control" 
+http://wbond.net/sublime_packages/package_control
+
+
+
 USAGE:
 
 Search selected text
