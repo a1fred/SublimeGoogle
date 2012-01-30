@@ -2,6 +2,10 @@
     {
         "caption": "SublimeGoogle: search selection",
         "command": "google_search_selection"
+    },
+    {
+    	"caption": "SublimeGoogle: search",
+        "command": "google_search_input"    	
     }
 ]
 
