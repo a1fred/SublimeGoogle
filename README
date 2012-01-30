@@ -5,10 +5,10 @@ USAGE:
 Search selected text
 * Select text
 * Right click on it and click "search selection"
-   OR
-  Press Ctrl+Shift+g (Cmd+Shift+g on Mac OS X)
 * See results on native popup menu
 * Press enter to open in browser
-
-TODO:
-Search user's input text
+ 
+Search user's input
+* Press Ctrl+Shift+g (Cmd+Shift+g on Mac OS X)
+* See results on native popup menu
+* Press enter to open in browser
