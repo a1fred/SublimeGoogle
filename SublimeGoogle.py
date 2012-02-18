@@ -2,7 +2,7 @@ import sublime, sublime_plugin
 try:
   import json
 except ImportError:
-  import simplejson as json
+	import simplejson as json
  
 import urllib, urllib2
 import os.path
@@ -24,7 +24,6 @@ class GoogleSearchSelectionCommand(sublime_plugin.WindowCommand):
 		for x in res.get_results():
 			self.results.append([x.title+": "+x.url, x.desc])
 		sublime.status_message("Found "+str(res.num_results)+" results.")
-
 		self.window.show_quick_panel(self.results, self.onResSelected)
 		return 0
 	def run(self):
@@ -53,5 +52,5 @@ class GoogleSearchInputCommand(GoogleSearchSelectionCommand):
 	def run(self):
 		self.results=list()
 		self.window.show_input_panel("Google search:", '', self.google_search, None, None)
-		self.show_results()
+		#self.show_results()
 		return 0
