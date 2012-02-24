@@ -30,8 +30,8 @@ class GoogleSearchSelectionCommand(sublime_plugin.WindowCommand):
 		v = self.window.active_view()
 		text = v.substr(v.sel()[0]).strip()
 		self.results=list()
-#		self.google_search(text)
-		self.show_results()
+		self.google_search(text)
+
 		return 0
 	def onResSelected(self, num):
 		"""
@@ -52,5 +52,5 @@ class GoogleSearchInputCommand(GoogleSearchSelectionCommand):
 	def run(self):
 		self.results=list()
 		self.window.show_input_panel("Google search:", '', self.google_search, None, None)
-#		self.show_results()
+
 		return 0
