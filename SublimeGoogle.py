@@ -1,13 +1,5 @@
 import sublime, sublime_plugin
-try:
-  import json
-except ImportError:
-	import simplejson as json
- 
-import urllib, urllib2
-import os.path
 import webbrowser
-import search
 
 class GoogleSearchSelectionCommand(sublime_plugin.WindowCommand):
 	"""
@@ -17,14 +9,8 @@ class GoogleSearchSelectionCommand(sublime_plugin.WindowCommand):
 		"""
 		Search text in google and place results in self.results, then show in quick panel
 		"""
-		sublime.status_message("Searching \""+text+"\" in google.")
-		res = search.GoogleSearch(text)
-		res.results_per_page=10
-		self.results.append(["Open in browser", "http://google.com/search?q="+text])
-		for x in res.get_results():
-			self.results.append([x.title+": "+x.url, x.desc])
-		sublime.status_message("Found "+str(res.num_results)+" results.")
-		self.window.show_quick_panel(self.results, self.onResSelected)
+		sublime.status_message("I\'ve opened web browser for this page.")
+		webbrowser.open("http://google.com/search?q="+text)
 		return 0
 	def run(self):
 		v = self.window.active_view()
@@ -33,17 +19,6 @@ class GoogleSearchSelectionCommand(sublime_plugin.WindowCommand):
 		self.google_search(text)
 
 		return 0
-	def onResSelected(self, num):
-		"""
-		Open page in browser
-		"""
-		if num == -1:
-			return
-		else:
-			url = self.results[num][1]
-			sublime.status_message("I\'ve opened web browser for this page.")
-			webbrowser.open(url)
-			return 1
 
 class GoogleSearchInputCommand(GoogleSearchSelectionCommand):
 	"""
