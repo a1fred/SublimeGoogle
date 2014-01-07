@@ -11,10 +11,8 @@ USAGE:
 Search selected text
 * Select text
 * Right click on it and click "search selection"
-* See results on native popup menu
 * Press enter to open in browser
  
 Search user's input
 * Press Ctrl+Shift+g (Cmd+Shift+g on Mac OS X)
-* See results on native popup menu
 * Press enter to open in browser
